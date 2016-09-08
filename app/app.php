@@ -30,7 +30,7 @@
         $cds_matching_search = array();
         foreach ($_SESSION['cds'] as $cd) {
             $artist = $cd->getArtist();
-            if(strpos($artist, $_POST['search-term']) != false) {
+            if(stripos($artist, $_POST['search-term']) !== false) {
                 array_push($cds_matching_search, $cd);
             }
         }
