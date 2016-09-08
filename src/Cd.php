@@ -12,6 +12,7 @@
             $this->artist = $band_name;
             $this->cover_art = $image_path;
             $this->price = $album_price;
+            $this->save();
         }
 
         function setPrice($new_price)
@@ -56,6 +57,17 @@
         function getCoverArt()
         {
             return $this->cover_art;
+        }
+
+//Methods
+        function save()
+        {
+            array_push($_SESSION['cds'], $this);
+        }
+//Static Methods
+        static function getAll()
+        {
+            return $_SESSION['cds'];
         }
     }
 ?>

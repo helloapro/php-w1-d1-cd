@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>CD Search</title>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Search Results:</h1>
+            {% for cd in cds %}
+                <div class='row'>
+                    <div class='col-md-6'>
+                        <img src='{{ cd.getCoverArt }}'>
+                    </div>
+                    <div class='col-md-6'>
+                        <p>{{ cd.getTitle }}</p>
+                        <p>By {{ cd.getArtist }}</p>
+                        <p>${{ cd.getPrice }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>

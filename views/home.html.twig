@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Search by Artist</title>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Search the CD Collection by Artist!</h1>
+            <form class='' action='/search-results' method='post'>
+                <label for=''>Artist Name:</label>
+                <input type='text' name='search-term' value=''>
+                <button type='submit' name='button'></button>
+            </form>
+
+            <h1>All CDs in the collection:</h1>
+            {% for cd in cds %}
+                <div class='row'>
+                    <div class='col-md-6'>
+                        <img src='{{ cd.getCoverArt }}'>
+                    </div>
+                    <div class='col-md-6'>
+                        <p>{{ cd.getTitle }}</p>
+                        <p>By {{ cd.getArtist }}</p>
+                        <p>${{ cd.getPrice }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
